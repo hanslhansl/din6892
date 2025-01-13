@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "din6885"
+version = "0.1.0"
+description = "Implementation of DIN 6892 - Drive type fastenings without taper action - Parallel keys - Calculation and design"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+authors = [{name = "hanslhansl", email = "p4u1_1@posteo.at"}]
+dependencies = [
+]
+
+[tool.setuptools]
+packages = ["din6892"]

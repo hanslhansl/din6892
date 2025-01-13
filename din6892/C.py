@@ -23,7 +23,7 @@ def M_teq(K_A : float, M_tnenn : float):
     """Glg. 34"""
     return K_A * M_tnenn
 
-def M_tzul(p_zul : float, h : float, t_1 : float, l_tr : float, d : float, i : int, phi):
+def M_tzul(p_zul : float, h : float, t_1 : float, l_tr : float, d : float, i : int, phi : float):
     """Glg. 35"""
 
     return p_zul * (h - t_1) * l_tr * d / 2 * i * phi / 1000
@@ -68,12 +68,15 @@ class Calculator:
         _print("phi =", self.phi)
 
         self.M_tzul = M_tzul(self.p_zul, self.passfeder.h, self.passfeder.t_1, self.l_tr, self.passfeder.d_1, self.i, self.phi)
-        res = self.M_tzul >= self.M_teq
+        _print("M_tzul =", self.M_tzul)
 
+        self.S = self.M_tzul / self.M_teq
+        
+        res = self.S >= 1
         if res:
-            _print("\033[32mM_tzul =", self.M_tzul, ">=", self.M_teq, "\033[0m")
+            _print("\033[32mS =", self.S, ">= 1\033[0m")
         else:
-            _print("\033[31mM_tzul =", self.M_tzul, "<", self.M_teq, "\033[0m")
+            _print("\033[31mS =", self.S, "< 1\033[0m")
 
         if _assert:
             assert res

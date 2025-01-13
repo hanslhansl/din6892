@@ -26,7 +26,7 @@ def M_teq(K_A : float, M_tnenn : float):
 def M_tzul(p_zul : float, h : float, t_1 : float, l_tr : float, d : float, i : int, phi):
     """Glg. 35"""
 
-    return p_zul * (h - t_1) * l_tr * d / 2 * i * phi
+    return p_zul * (h - t_1) * l_tr * d / 2 * i * phi / 1000
 
 class Calculator:
     def __init__(self,

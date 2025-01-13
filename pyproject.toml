@@ -3,7 +3,7 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "din6885"
+name = "din6892"
 version = "0.1.0"
 description = "Implementation of DIN 6892 - Drive type fastenings without taper action - Parallel keys - Calculation and design"
 readme = "README.md"
